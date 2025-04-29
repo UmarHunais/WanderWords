@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>POST</title>
+    <link rel="stylesheet" href="/style/content.css">
+    <link rel="stylesheet" href="/style/layout.css">
+    <link rel="icon" href="images/W.png">
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background: linear-gradient(to right, #e0f7fa, #f9fbe7);
+        }
+
+        .home-icon {
+            position: fixed;
+            top: 15px;
+            left: 15px;
+            z-index: 999;
+            cursor: pointer;
+        }
+
+        .posts-container {
+            padding: 50px;
+            max-width: 1000px;
+            margin: auto;
+        }
+
+        .card {
+            background-color: #ffffffdd;
+            border-radius: 10px;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+            margin-bottom: 30px;
+            padding: 20px;
+        }
+
+        .card h2 {
+            margin-top: 0;
+        }
+
+        .card-content {
+            display: flex;
+            gap: 20px;
+            flex-wrap: wrap;
+        }
+
+        .card p {
+            flex: 1;
+            text-align: justify;
+        }
+
+        .card img {
+            width: 300px;
+            border-radius: 10px;
+        }
+
+        button {
+            background-color: #7b1fa2;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            margin-top: 15px;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #9c27b0;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Home Icon -->
+    <a href="/" >
+        <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="#333" class="bi bi-house" viewBox="0 0 16 16">
+            <path d="M8.707 1.5a1 1 0 0 0-1.414 0L.646 8.146a.5.5 0 0 0 .708.708L2 8.207V13.5A1.5 1.5 0 0 0 3.5 15h9a1.5 1.5 0 0 0 1.5-1.5V8.207l.646.647a.5.5 0 0 0 .708-.708L13 5.793V2.5a.5.5 0 0 0-.5-.5h-1a.5.5 0 0 0-.5.5v1.293zM13 7.207V13.5a.5.5 0 0 1-.5.5h-9a.5.5 0 0 1-.5-.5V7.207l5-5z"/>
+        </svg>
+    </a>
+
+    <div class="posts-container"> 
+        <h1>All Travel Stories</h1>
+        <% posts.forEach(post => { %>
+          <div class="card">
+            <h2><%= post.title %></h2>
+            <div class="card-content">
+              <p><%= post.description %></p>
+              <img src="<%= post.imageUrl %>" alt="Post Image">
+            </div>
+            <form method="POST" action="/posts/<%= post.id %>?_method=DELETE">
+              <button type="submit">Delete</button>
+            </form>
+          </div>
+        <% }) %>
+    </div>
+
+</body>
+</html>

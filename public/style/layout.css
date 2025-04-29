@@ -1,0 +1,36 @@
+body {
+    font-family: 'Segoe UI', sans-serif;
+    margin: 0;
+    background-color: #3f3f3f;
+    color: #333;
+  }
+  
+  header, footer {
+    background-color: #282828;
+    text-align: center;
+    padding: 1rem;
+  }
+  
+  nav {
+    background-color: #333;
+    padding: 0.5rem;
+    text-align: center;
+  }
+  
+  nav a {
+    color: white;
+    margin: 0 1rem;
+    text-decoration: none;
+  }
+  
+  nav a:hover {
+    text-decoration: underline;
+  }
+  
+  main {
+    padding: 1rem 2rem;
+  }
+  
+  html {
+    scroll-behavior: smooth;
+  }

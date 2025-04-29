@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Submit</title>
+    <link rel="icon" href="images/W.png">
+    <link rel="stylesheet" href="/style/content.css"> <!-- Make sure this path is correct -->
+</head>
+<body class="gradient-bg">
+    <div class="form-container">
+        <h2>Fill the form below</h2>
+        <h1>Share Your Travel Story</h1>
+        <form action="/submit.ejs" method="POST" enctype="multipart/form-data">
+            <input type="text" name="title" placeholder="Title" required><br>
+            <textarea name="description" placeholder="Description" required></textarea><br>
+            <input type="file" name="image" accept="image/*" required><br>
+            <button type="submit">Submit</button>
+        </form>
+    </div>
+</body>
+</html>
